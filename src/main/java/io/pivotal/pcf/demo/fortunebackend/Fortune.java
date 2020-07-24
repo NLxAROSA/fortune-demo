@@ -1,7 +1,6 @@
 package io.pivotal.pcf.demo.fortunebackend;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.redis.core.RedisHash;
 
 

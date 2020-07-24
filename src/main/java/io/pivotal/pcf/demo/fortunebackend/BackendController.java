@@ -74,7 +74,7 @@ public class BackendController {
         _repository.deleteAll();
 
         LOG.info("Deleted");
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     @RequestMapping(value = "/kill", method = RequestMethod.GET)

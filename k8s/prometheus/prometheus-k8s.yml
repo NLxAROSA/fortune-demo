@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+   labels:
+      app: fortune-prometheus
+      deployment: pks-workshop
+   name: fortune-prometheus
+spec:
+   type: LoadBalancer
+   selector:
+      app: fortune-prometheus
+   ports:
+   - port: 9090
+     name: fortune-prometheus
+---
+apiVersion: v1
+kind: Pod
+metadata:
+   labels:
+      app: fortune-prometheus
+      deployment: pks-workshop
+   name: fortune-prometheus
+spec:
+   containers:
+   - image: nlxarosa/prometheus-demo-k8s
+     name: fortune-prometheus
+     ports:
+     - containerPort: 9090
+       protocol: TCP
+
