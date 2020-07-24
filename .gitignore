@@ -27,3 +27,4 @@ target
 
 ci/credentials.yml
 *.iml
+.settings/
