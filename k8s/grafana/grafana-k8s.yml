@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+   labels:
+      app: fortune-grafana
+      deployment: pks-workshop
+   name: fortune-grafana
+spec:
+   type: LoadBalancer
+   selector:
+      app: fortune-grafana
+   ports:
+   - port: 80
+     targetPort: 3000
+     name: fortune-grafana
+---
+apiVersion: v1
+kind: Pod
+metadata:
+   labels:
+      app: fortune-grafana
+      deployment: pks-workshop
+   name: fortune-grafana
+spec:
+   containers:
+   - image: grafana/grafana
+     name: fortune-grafana
+     ports:
+     - containerPort: 3000
+       protocol: TCP
+

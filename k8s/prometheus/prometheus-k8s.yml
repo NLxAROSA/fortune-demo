@@ -10,7 +10,8 @@ spec:
    selector:
       app: fortune-prometheus
    ports:
-   - port: 9090
+   - port: 80
+     targetPort: 9090
      name: fortune-prometheus
 ---
 apiVersion: v1
